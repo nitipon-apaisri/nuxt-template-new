@@ -66,9 +66,107 @@ The project uses:
 
 Run `pnpm typecheck` before committing to ensure type safety.
 
-## Deployment
+## Docker Deployment
 
-Build the application for production:
+The project includes a multi-stage Dockerfile for containerized deployment.
+
+### Prerequisites
+
+- Docker (v20 or higher recommended)
+- Docker Compose (optional, for orchestration)
+
+### Building the Docker Image
+
+The Dockerfile supports both production and development builds through the `ENVIRONMENT` build argument.
+
+**Production build** (default):
+
+```bash
+docker build -t cosmic-crm:latest .
+```
+
+**Development build**:
+
+```bash
+docker build --build-arg ENVIRONMENT=development -t cosmic-crm:dev .
+```
+
+**Build with version tag**:
+
+```bash
+docker build \
+  --build-arg VERSION=1.0.0 \
+  --build-arg TAG_VERSION=v1.0.0 \
+  -t cosmic-crm:1.0.0 .
+```
+
+### Build Arguments
+
+| Argument | Default | Description |
+|----------|---------|-------------|
+| `ENVIRONMENT` | `production` | Target environment (`production` or `development`) |
+| `VERSION` | `latest` | Application version label |
+| `TAG_VERSION` | - | Git tag or version identifier |
+
+### Environment Files
+
+The Dockerfile automatically copies the appropriate environment file based on the `ENVIRONMENT` argument:
+- **Production**: Uses `.env.prod`
+- **Development**: Uses `.env.dev`
+
+Ensure the required `.env.prod` or `.env.dev` file exists in the project root before building.
+
+### Running the Container
+
+**Run production container**:
+
+```bash
+docker run -p 3000:3000 cosmic-crm:latest
+```
+
+**Run with custom environment variables**:
+
+```bash
+docker run -p 3000:3000 \
+  -e NUXT_PUBLIC_API_URL=https://api.example.com \
+  cosmic-crm:latest
+```
+
+**Run in detached mode**:
+
+```bash
+docker run -d -p 3000:3000 --name cosmic-crm cosmic-crm:latest
+```
+
+### Docker Compose Example
+
+Create a `docker-compose.yml` file:
+
+```yaml
+services:
+  cosmic-crm:
+    build:
+      context: .
+      args:
+        ENVIRONMENT: production
+        VERSION: ${VERSION:-latest}
+        TAG_VERSION: ${TAG_VERSION:-}
+    ports:
+      - "3000:3000"
+    environment:
+      - NUXT_PUBLIC_API_URL=${API_URL}
+    restart: unless-stopped
+```
+
+Then run with:
+
+```bash
+docker-compose up -d
+```
+
+## Traditional Deployment
+
+Build the application for production without Docker:
 
 ```bash
 pnpm build
