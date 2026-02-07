@@ -34,5 +34,8 @@
         </UFooter>
       </div>
     </template>
+    <template v-else>
+      <NuxtPage />
+    </template>
   </UApp>
 </template>

@@ -23,6 +23,7 @@
     "@sidebase/nuxt-auth": "^1.2.0",
     "@vueuse/nuxt": "^14.2.0",
     "axios": "^1.13.4",
+    "buffer": "^6.0.3",
     "dayjs": "^1.11.19",
     "keycloak-js": "^26.2.3",
     "nuxt": "^4.3.0",
