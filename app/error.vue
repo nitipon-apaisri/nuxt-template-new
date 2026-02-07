@@ -15,9 +15,9 @@
       class: 'rounded-full',
     }"
     :error="{
-      statusCode: props.error.statusCode,
-      statusMessage: props.error.statusMessage,
+      statusCode: props.error.status,
+      statusMessage: props.error.statusText,
       message: props.error.message,
     }"
-  />
+  /> 
 </template>

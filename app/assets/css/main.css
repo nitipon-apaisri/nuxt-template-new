@@ -1,18 +1,575 @@
+/* @font-face {
+  font-family: 'ChesnaGrotesk';
+  src: url('/fonts/chesna/ChesnaGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'ChesnaGrotesk';
+  src: url('/fonts/ChesnaGrotesk-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ChesnaGrotesk';
+  src: url('/fonts/chesnagrotesk-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ChesnaGrotesk';
+  src: url('/fonts/ChesnaGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ChesnaGrotesk';
+  src: url('/fonts/ChesnaGrotesk-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ChesnaGrotesk';
+  src: url('/fonts/chesnagrotesk-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Prompt Font Family - Thai Support */
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* @import './fonts.css'; */
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
-@theme static {
-  --font-sans: 'Public Sans', sans-serif;
+:root {
+  --color-scgjwd-bright-blue: #0054ff;
+  --color-scgjwd-bright-blue-50: #e6f0ff;
+  --color-scgjwd-bright-blue-100: #b3d1ff;
+  --color-scgjwd-bright-blue-200: #80b2ff;
+  --color-scgjwd-bright-blue-300: #4d93ff;
+  --color-scgjwd-bright-blue-400: #1a74ff;
+  --color-scgjwd-bright-blue-500: #0054ff;
+  --color-scgjwd-bright-blue-600: #0043cc;
+  --color-scgjwd-bright-blue-700: #003299;
+  --color-scgjwd-bright-blue-800: #002166;
+  --color-scgjwd-bright-blue-900: #001033;
 
-  --color-green-50: #effdf5;
-  --color-green-100: #d9fbe8;
-  --color-green-200: #b3f5d1;
-  --color-green-300: #75edae;
-  --color-green-400: #00dc82;
-  --color-green-500: #00c16a;
-  --color-green-600: #00a155;
-  --color-green-700: #007f45;
-  --color-green-800: #016538;
-  --color-green-900: #0a5331;
-  --color-green-950: #052e16;
+  --color-scgjwd-night-blue: #000043;
+  --color-scgjwd-night-blue-50: #e6e6f0;
+  --color-scgjwd-night-blue-100: #b3b3d1;
+  --color-scgjwd-night-blue-200: #8080b2;
+  --color-scgjwd-night-blue-300: #4d4d93;
+  --color-scgjwd-night-blue-400: #1a1a74;
+  --color-scgjwd-night-blue-500: #000043;
+  --color-scgjwd-night-blue-600: #000035;
+  --color-scgjwd-night-blue-700: #000028;
+  --color-scgjwd-night-blue-800: #00001a;
+  --color-scgjwd-night-blue-900: #00000d;
+
+  --color-scgjwd-glaucous: #6d7fae;
+  --color-scgjwd-orange: #f15c22;
+  --color-scgjwd-supernove: #ffca05;
+  --color-scgjwd-mercury: #e6e7e8;
+
+  /* Success Color */
+  --ui-success: #00c951;
+  --ui-success-50: #e6fff0;
+  --ui-success-100: #b8ffd4;
+  --ui-success-200: #8affb9;
+  --ui-success-300: #5cff9d;
+  --ui-success-400: #2eff82;
+  --ui-success-500: #00ff66;
+  --ui-success-600: #00c951;
+  --ui-success-700: #00a341;
+  --ui-success-800: #00752f;
+  --ui-success-900: #00471d;
+  --ui-success-950: #001a0a;
+
+  /* Info Color */
+  --ui-info: #0066ff;
+  --ui-info-50: #e6f0ff;
+  --ui-info-100: #b8d4ff;
+  --ui-info-200: #8ab9ff;
+  --ui-info-300: #5c9dff;
+  --ui-info-400: #2b7fff;
+  --ui-info-500: #0066ff;
+  --ui-info-600: #0054d1;
+  --ui-info-700: #0041a3;
+  --ui-info-800: #002f75;
+  --ui-info-900: #001d47;
+  --ui-info-950: #000a1a;
+
+  /* Warning Color */
+  --ui-warning: #ffc145;
+  --ui-warning-50: #fff7e6;
+  --ui-warning-100: #ffe7b8;
+  --ui-warning-200: #ffd88a;
+  --ui-warning-300: #ffc145;
+  --ui-warning-400: #ffb92e;
+  --ui-warning-500: #ffaa00;
+  --ui-warning-600: #d18b00;
+  --ui-warning-700: #a36d00;
+  --ui-warning-800: #754e00;
+  --ui-warning-900: #473000;
+  --ui-warning-950: #1a1100;
+
+  /* Error Color */
+  --ui-error: #fb4141;
+  --ui-error-50: #fee6e6;
+  --ui-error-100: #feb9b9;
+  --ui-error-200: #fd8c8c;
+  --ui-error-300: #fc5f5f;
+  --ui-error-400: #fb4141;
+  --ui-error-500: #fa0505;
+  --ui-error-600: #cd0404;
+  --ui-error-700: #a00303;
+  --ui-error-800: #730202;
+  --ui-error-900: #460101;
+  --ui-error-950: #190101;
+
+  /* Orange Color */
+  --ui-orange: #f15c22;
+  --ui-orange-50: #fdede7;
+  --ui-orange-100: #fbcebc;
+  --ui-orange-200: #f8ae91;
+  --ui-orange-300: #f58e66;
+  --ui-orange-400: #f26f3a;
+  --ui-orange-500: #f15c22;
+  --ui-orange-600: #c5410d;
+  --ui-orange-700: #99320a;
+  --ui-orange-800: #6e2407;
+  --ui-orange-900: #431604;
+  --ui-orange-950: #180802;
+
+  /* Matcha Color */
+  --ui-matcha: #328e6e;
+  --ui-match-50: #ecf8f4;
+  --ui-match-100: #caece0;
+  --ui-match-200: #a8e1cd;
+  --ui-match-300: #86d5b9;
+  --ui-match-400: #64c9a6;
+  --ui-match-500: #42bd92;
+  --ui-match-600: #328e6e;
+  --ui-match-700: #2a795d;
+  --ui-match-800: #1e5743;
+  --ui-match-900: #133529;
+  --ui-match-950: #07130f;
+
+  /* Purple Color */
+  --ui-purple: oklch(49.6% 0.265 301.924);
+  --ui-purple-50: oklch(97.7% 0.014 308.299);
+  --ui-purple-100: oklch(94.6% 0.033 307.174);
+  --ui-purple-200: oklch(90.2% 0.063 306.703);
+  --ui-purple-300: oklch(82.7% 0.119 306.383);
+  --ui-purple-400: oklch(71.4% 0.203 305.504);
+  --ui-purple-500: oklch(62.7% 0.265 303.9);
+  --ui-purple-600: oklch(55.8% 0.288 302.321);
+  --ui-purple-700: oklch(49.6% 0.265 301.924);
+  --ui-purple-800: oklch(43.8% 0.218 303.724);
+  --ui-purple-900: oklch(38.1% 0.176 304.987);
+  --ui-purple-950: oklch(29.1% 0.149 302.717);
+}
+
+@theme {
+  --font-sans:
+    'ChesnaGrotesk', 'Prompt', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-primary: var(--color-scgjwd-bright-blue);
+  --color-primary-50: var(--color-scgjwd-bright-blue-50);
+  --color-primary-100: var(--color-scgjwd-bright-blue-100);
+  --color-primary-200: var(--color-scgjwd-bright-blue-200);
+  --color-primary-300: var(--color-scgjwd-bright-blue-300);
+  --color-primary-400: var(--color-scgjwd-bright-blue-400);
+  --color-primary-500: var(--color-scgjwd-bright-blue-500);
+  --color-primary-600: var(--color-scgjwd-bright-blue-600);
+  --color-primary-700: var(--color-scgjwd-bright-blue-700);
+  --color-primary-800: var(--color-scgjwd-bright-blue-800);
+  --color-primary-900: var(--color-scgjwd-bright-blue-900);
+  --color-secondary: var(--color-scgjwd-night-blue);
+  --color-secondary-50: var(--color-scgjwd-night-blue-50);
+  --color-secondary-100: var(--color-scgjwd-night-blue-100);
+  --color-secondary-200: var(--color-scgjwd-night-blue-200);
+  --color-secondary-300: var(--color-scgjwd-night-blue-300);
+  --color-secondary-400: var(--color-scgjwd-night-blue-400);
+  --color-secondary-500: var(--color-scgjwd-night-blue-500);
+  --color-secondary-600: var(--color-scgjwd-night-blue-600);
+  --color-secondary-700: var(--color-scgjwd-night-blue-700);
+  --color-secondary-800: var(--color-scgjwd-night-blue-800);
+  --color-secondary-900: var(--color-scgjwd-night-blue-900);
+
+  --color-orange: var(--ui-orange);
+  --color-orange-50: var(--ui-orange-50);
+  --color-orange-100: var(--ui-orange-100);
+  --color-orange-200: var(--ui-orange-200);
+  --color-orange-300: var(--ui-orange-300);
+  --color-orange-400: var(--ui-orange-400);
+  --color-orange-500: var(--ui-orange-500);
+  --color-orange-600: var(--ui-orange-600);
+  --color-orange-700: var(--ui-orange-700);
+  --color-orange-800: var(--ui-orange-800);
+  --color-orange-900: var(--ui-orange-900);
+  --color-orange-950: var(--ui-orange-950);
+
+  --color-matcha: var(--ui-matcha);
+  --color-matcha-50: var(--ui-matcha-50);
+  --color-matcha-100: var(--ui-matcha-100);
+  --color-matcha-200: var(--ui-matcha-200);
+  --color-matcha-300: var(--ui-matcha-300);
+  --color-matcha-400: var(--ui-matcha-400);
+  --color-matcha-500: var(--ui-matcha-500);
+  --color-matcha-600: var(--ui-matcha-600);
+  --color-matcha-700: var(--ui-matcha-700);
+  --color-matcha-800: var(--ui-matcha-800);
+  --color-matcha-900: var(--ui-matcha-900);
+
+  --color-error: var(--ui-error);
+  --color-error-50: var(--ui-error-50);
+  --color-error-100: var(--ui-error-100);
+  --color-error-200: var(--ui-error-200);
+  --color-error-300: var(--ui-error-300);
+  --color-error-400: var(--ui-error-400);
+  --color-error-500: var(--ui-error-500);
+  --color-error-600: var(--ui-error-600);
+  --color-error-700: var(--ui-error-700);
+  --color-error-800: var(--ui-error-800);
+  --color-error-900: var(--ui-error-900);
+
+  --color-warning: var(--ui-warning);
+  --color-warning-50: var(--ui-warning-50);
+  --color-warning-100: var(--ui-warning-100);
+  --color-warning-200: var(--ui-warning-200);
+  --color-warning-300: var(--ui-warning-300);
+  --color-warning-400: var(--ui-warning-400);
+  --color-warning-500: var(--ui-warning-500);
+  --color-warning-600: var(--ui-warning-600);
+  --color-warning-700: var(--ui-warning-700);
+  --color-warning-800: var(--ui-warning-800);
+  --color-warning-900: var(--ui-warning-900);
+
+  --color-success: var(--ui-success);
+  --color-success-50: var(--ui-success-50);
+  --color-success-100: var(--ui-success-100);
+  --color-success-200: var(--ui-success-200);
+  --color-success-300: var(--ui-success-300);
+  --color-success-400: var(--ui-success-400);
+  --color-success-500: var(--ui-success-500);
+  --color-success-600: var(--ui-success-600);
+  --color-success-700: var(--ui-success-700);
+  --color-success-800: var(--ui-success-800);
+  --color-success-900: var(--ui-success-900);
+
+  --color-info: var(--ui-info);
+  --color-info-50: var(--ui-info-50);
+  --color-info-100: var(--ui-info-100);
+  --color-info-200: var(--ui-info-200);
+  --color-info-300: var(--ui-info-300);
+  --color-info-400: var(--ui-info-400);
+  --color-info-500: var(--ui-info-500);
+  --color-info-600: var(--ui-info-600);
+  --color-info-700: var(--ui-info-700);
+  --color-info-800: var(--ui-info-800);
+  --color-info-900: var(--ui-info-900);
+
+  --color-purple: var(--ui-purple);
+  --color-purple-50: var(--ui-purple-50);
+  --color-purple-100: var(--ui-purple-100);
+  --color-purple-200: var(--ui-purple-200);
+  --color-purple-300: var(--ui-purple-300);
+  --color-purple-400: var(--ui-purple-400);
+  --color-purple-500: var(--ui-purple-500);
+  --color-purple-600: var(--ui-purple-600);
+  --color-purple-700: var(--ui-purple-700);
+  --color-purple-800: var(--ui-purple-800);
+  --color-purple-900: var(--ui-purple-900);
+  --color-purple-950: var(--ui-purple-950);
+
+  --color-scgjwd-bright-blue: var(--color-scgjwd-bright-blue);
+  --color-scgjwd-night-blue: var(--color-scgjwd-night-blue);
+  --color-scgjwd-glaucous: var(--color-scgjwd-glaucous);
+  --color-scgjwd-orange: var(--color-scgjwd-orange);
+  --color-scgjwd-supernove: var(--color-scgjwd-supernove);
+  --color-scgjwd-mercury: var(--color-scgjwd-mercury);
+}
+
+/* Theme transition for smooth color mode switching */
+html {
+  transition-property: background-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* Apply transitions to elements that change with theme */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  letter-spacing: 0.01em;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+.card-content {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.card-content-dark {
+  background-color: color-mix(in oklab, var(--ui-bg-elevated) 50%, transparent);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Hide scrollbar background */
+/* ::-webkit-scrollbar {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+} */
+
+/* Custom Font Family Classes */
+.font-chesna {
+  font-family:
+    'ChesnaGrotesk',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+.font-prompt {
+  font-family:
+    'Prompt',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+.font-thai {
+  font-family:
+    'Prompt',
+    'ChesnaGrotesk',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+/* Thai Language Support */
+[lang='th'],
+[lang='th-TH'],
+.thai-text {
+  font-family:
+    'Prompt',
+    'ChesnaGrotesk',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  line-height: 1.6;
+}
+
+/* Default font for Latin characters */
+.latin-text {
+  font-family:
+    'ChesnaGrotesk',
+    'Prompt',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+.card-hover:hover {
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 6px 24px -13px rgba(0, 0, 0, 0.1);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
