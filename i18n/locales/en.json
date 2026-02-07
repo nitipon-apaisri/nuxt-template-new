@@ -5,6 +5,9 @@
         "appearance": "Appearance",
         "logout": "Logout",
         "back": "Back",
-        "dark-mode": "Dark Mode"
+        "dark-mode": "Dark Mode",
+        "search-menu": "Search Menu",
+        "home": "Home"
+
     }
 }
