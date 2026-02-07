@@ -1,1 +1,10 @@
-{}
+{
+    "general": {
+        "profile": "Profile",
+        "language": "Language",
+        "appearance": "Appearance",
+        "logout": "Logout",
+        "back": "Back",
+        "dark-mode": "Dark Mode"
+    }
+}

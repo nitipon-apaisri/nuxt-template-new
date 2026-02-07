@@ -9,7 +9,10 @@
   // Stores
   const systemStore = useSystemStore();
   const { isMobile } = useWindowSize();
-  const { toggleMenu } = useHeaderMenu();
+  const { toggleMenu, currentView, goBack, openLogoutModal, onChangeView } = useHeaderMenu();
+
+  // Components
+  import ProfilePopover from '~/components/popover/ProfilePopover.vue';
 </script>
 
 <template>
@@ -30,7 +33,7 @@
         <h1
           class="text-2xl font-bold bg-linear-to-r from-white via-[#ffc38f] to-[#ff8d8d] bg-clip-text text-transparent truncate"
         >
-          DYNAMIC ONE
+          COSMIC CRM
         </h1>
       </div>
     </div>
@@ -47,7 +50,7 @@
             class="w-fit flex gap-2 items-center bg-white/10 rounded-md p-2 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
           >
             <div class="bg-white rounded-full p-0.5">
-              <UAvatar :src="user.avatar || ''" />
+              <UAvatar :src="''" :alt="user.name" size="sm" />
             </div>
             <div class="flex flex-col">
               <div class="flex items-center gap-2">
@@ -55,16 +58,8 @@
                   {{ user.name }}
                 </p>
               </div>
-              <!-- <UTooltip :text="$t('general.total-time-spent-today')">
-                <div class="flex text-white items-center gap-1">
-                  <Icon name="i-lucide-clock" class="text-[0.625rem]" />
-                  <p class="h-3.5 text-[0.625rem]">
-                    {{ totalTimeSpent }}
-                  </p>
-                </div>
-              </UTooltip> -->
             </div>
-            <Button
+            <UButton
               icon="i-lucide-chevron-down"
               size="md"
               variant="ghost"
@@ -73,14 +68,14 @@
           </div>
         </div>
 
-        <!-- <template #content>
+        <template #content>
           <ProfilePopover
             :currentView="currentView"
             @goBack="goBack"
             @openLogoutModal="openLogoutModal"
             @onChangeView="onChangeView"
           />
-        </template> -->
+        </template>
       </UPopover>
     </div>
   </div>
