@@ -19,5 +19,5 @@
       statusMessage: props.error.statusText,
       message: props.error.message,
     }"
-  /> 
+  />
 </template>
