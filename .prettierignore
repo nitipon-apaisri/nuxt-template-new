@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+.nuxt/
+.output/
+dist/
+build/
+
+# Cache
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Lock files (optional - some teams prefer to format these)
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Generated files
+*.min.js
+*.min.css
+
+# Public assets
+public/
+
