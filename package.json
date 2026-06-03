@@ -28,6 +28,7 @@
     "buffer": "^6.0.3",
     "dayjs": "^1.11.19",
     "keycloak-js": "^26.2.3",
+    "lint-staged": "^17.0.7",
     "nuxt": "^4.3.0",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.1.18"
@@ -36,10 +37,10 @@
     "@nuxt/eslint": "^1.13.0",
     "@types/node": "^25.2.1",
     "eslint": "^9.39.2",
+    "husky": "^8.0.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.4",
-    "husky": "^8.0.0"
+    "vue-tsc": "^3.2.4"
   },
   "packageManager": "pnpm@10.28.2",
   "lint-staged": {
