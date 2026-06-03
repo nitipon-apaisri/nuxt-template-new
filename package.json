@@ -9,7 +9,9 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "audit:osv": "./scripts/security-check.sh"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.87",
@@ -36,7 +38,11 @@
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.4"
+    "vue-tsc": "^3.2.4",
+    "husky": "^8.0.0"
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@10.28.2",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }
